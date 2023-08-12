@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import opening from "./Scenes/opening";
-import mainMenu from "./Scenes/mainMenu";
+import opening from "./scenes/opening";
+import mainMenu from "./scenes/mainMenu";
 
 opening().then(() => {
     mainMenu();

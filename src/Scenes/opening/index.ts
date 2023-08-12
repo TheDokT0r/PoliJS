@@ -2,8 +2,8 @@
 import chalk from "chalk";
 import inquirer from 'inquirer';
 import { createSpinner } from 'nanospinner';
-import difficulty from "../../Data/gameInfo/difficulty";
-import country from "../../Data/gameInfo/county";
+import difficulty from "../../gameInfo/difficulty";
+import country from "../../gameInfo/county";
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
