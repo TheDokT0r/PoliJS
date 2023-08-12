@@ -1,14 +1,15 @@
 
 import chalk from "chalk";
 import inquirer from 'inquirer';
-import { indexOf } from 'lodash';
-import difficulty from "../../Data/gameInfo";
+import { createSpinner } from 'nanospinner';
+import difficulty from "../../Data/gameInfo/difficulty";
+import country from "../../Data/gameInfo/county";
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 
-export default () => {
-    inquirer.prompt([
+export default async () => {
+    const answers = await inquirer.prompt([
         {
             type: 'input',
             name: 'name',
@@ -25,15 +26,37 @@ export default () => {
             type: 'list',
             name: 'difficulty',
             message: 'What is your difficulty?',
-            choices: ['DEFCOM 5', 'DEFCOM 4', 'DEFCOM 3', 'DEFCOM 2', 'DEFCOM 1',],
+            choices: difficulty.options,
             default: 'DEFCOM 3'
         }
-    ]).then(answers => {
-        difficulty.setDifficulty(indexOf(answers.difficulty.choices, answers.difficulty.answers));
+    ])
+    console.log(chalk.bgYellow(chalk.black('Chosen settings:')));
 
-        console.log(chalk.green(`Hello ${answers.name}!`));
-        console.log(chalk.green(`Welcome to ${answers.country}!`));
-        console.log(chalk.green(`You have chosen ${difficulty.output()} difficulty!`));
-        console.log(chalk.green(`Let's get started!`));
-    });
+    console.log(`Name: ${chalk.bgGreen(answers.name)}`);
+    console.log(`Country: ${chalk.bgGreen(answers.country)}`);
+    console.log(`Difficulty: ${chalk.bgGreen(answers.difficulty)}`);
+
+    const isThatCorrect = await inquirer.prompt([
+        {
+            type: 'confirm',
+            name: 'isThatCorrect',
+            message: 'Is that correct?',
+            default: true
+        }
+    ]);
+
+    if (!isThatCorrect.isThatCorrect) {
+        console.clear();
+        await module.exports();
+        return;
+    }
+
+
+    const spinner = createSpinner('Settings things up...').start();
+
+    difficulty.level = difficulty.options.indexOf(answers.difficulty);
+    country.name = answers.country;
+    country.leaderName = answers.name;
+
+    spinner.success();
 }
