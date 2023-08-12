@@ -1,5 +1,8 @@
-import chalk from 'chalk';
-import chalkAnimation from 'chalk-animation';
+#!/usr/bin/env node
 
-console.log(chalk.bgGreen('Hello World!') + chalk.bgBlue('Hello World!'));
-chalkAnimation.rainbow('Hello World!');
+import chalk from "chalk";
+import inquirer from 'inquirer';
+import opening from "./Scenes/opening";
+
+
+opening();
