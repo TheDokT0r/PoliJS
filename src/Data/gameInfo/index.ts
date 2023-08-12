@@ -1,7 +1,7 @@
 import chalk from "chalk";
 
 const difficulty = {
-    level = 0,
+    level: 0,
     setDifficulty: (newDifficulty: number) => {
         difficulty.level = newDifficulty;
     },

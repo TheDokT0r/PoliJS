@@ -17,6 +17,9 @@ dependencies:
   inquirer:
     specifier: ^8.2.6
     version: 8.2.6
+  lodash:
+    specifier: ^4.17.21
+    version: 4.17.21
   nanospinner:
     specifier: ^1.1.0
     version: 1.1.0
@@ -31,6 +34,9 @@ devDependencies:
   '@types/inquirer':
     specifier: ^9.0.3
     version: 9.0.3
+  '@types/lodash':
+    specifier: ^4.14.197
+    version: 4.14.197
   '@types/webpack':
     specifier: ^5.28.1
     version: 5.28.1(webpack-cli@5.1.4)
@@ -161,6 +167,10 @@ packages:
 
   /@types/json-schema@7.0.12:
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==}
+    dev: true
+
+  /@types/lodash@4.14.197:
+    resolution: {integrity: sha512-BMVOiWs0uNxHVlHBgzTIqJYmj+PgCo4euloGF+5m4okL3rEYzM2EEv78mw8zWSMM57dM7kVIgJ2QDvwHSoCI5g==}
     dev: true
 
   /@types/node@20.4.10:
