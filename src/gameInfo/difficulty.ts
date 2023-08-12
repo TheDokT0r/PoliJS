@@ -2,7 +2,7 @@ import chalk from "chalk";
 
 
 /**
- * The difficulty level of the game
+ * The difficulty level of the game``
  */
 const difficulty = {
     options: ['DEFCOM 5', 'DEFCOM 4', 'DEFCOM 3', 'DEFCOM 2', 'DEFCOM 1'],
@@ -44,7 +44,7 @@ const difficulty = {
                 console.log('Unknown difficulty level');
                 break;
         }
-    }
+    },
 }
 
 export default difficulty;

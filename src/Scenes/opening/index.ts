@@ -14,7 +14,7 @@ export default async () => {
             type: 'input',
             name: 'name',
             message: 'What is your name?',
-            default: 'Mr. President',
+            default: 'James Bond',
         },
         {
             type: 'input',
